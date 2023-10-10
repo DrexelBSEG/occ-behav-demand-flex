@@ -5,10 +5,10 @@
 *.mat
 
 # except DB location file
-!testbed/DBLoc.mat
+!*/DBLoc.mat
 
 # energyplus output folder
 */Output_EPExport_*
 
 # random folder
-testbed/dig/
+*/dig/

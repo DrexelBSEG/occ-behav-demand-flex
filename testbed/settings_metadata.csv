@@ -1,0 +1,13 @@
+Parameter,Description
+GEB_case,(0-none;1-efficiency;2-shedding;3-shifting;4-modulate)
+Control_method,(0-rule based;1-MPC)
+occ_dense,(0-no;1-yes)
+occ_energysaving,(0-no;1-yes)
+TES,(0-no;1-yes)
+Location,(1-Atlanta;2-Buffalo;3-NewYork;4-Tucson;5-ElPaso)
+STD,(1-STD2004;2-STD2019)
+SeasonType,(1-typical winter;2-typical shoulder;3-extreme summer;4-typical summer)
+recv,(0-recovery mode off; 1-recovery mode on)
+ts_recv,(timestep to revoer to if recv==1)
+coll_recv,"(collection name for recovery if recv==1. put ""current"" if the collection name saved in the DBLoc.mat is desired)"
+enable OBM,(0=disable OBM; 1=connect with OBM)

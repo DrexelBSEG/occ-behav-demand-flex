@@ -1,5 +1,5 @@
 # simulink ouputs
-testbed/*slprj
+*/*slprj
 
 # all data
 *.mat
@@ -8,7 +8,7 @@ testbed/*slprj
 !testbed/DBLoc.mat
 
 # energyplus output folder
-testbed/Output_EPExport_*
+*/Output_EPExport_*
 
 # random folder
 testbed/dig/

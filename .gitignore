@@ -1,14 +1,11 @@
 # simulink ouputs
 */*slprj
 
-# all data
-*.mat
-
-# except DB location file
-!*/DBLoc.mat
+# ignore all .mat files in the analysis folder and its subfolders
+analysis/**/*.mat
 
 # energyplus output folder
 */Output_EPExport_*
 
 # random folder
-*/dig/
+*/dig

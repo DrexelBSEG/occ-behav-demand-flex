@@ -1,0 +1,173 @@
+Program Version,EnergyPlus, Version 9.3.0-baff08990c, YMD=2023.10.04 22:54
+! <Version>, Version ID
+ Version, 9.3
+! <Timesteps per Hour>, #TimeSteps, Minutes per TimeStep {minutes}
+ Timesteps per Hour, 60,  1
+! <System Convergence Limits>, Minimum System TimeStep {minutes}, Max HVAC Iterations, Minimum Plant Iterations, Maximum Plant Iterations
+ System Convergence Limits, 1, 20, 2, 8
+! <Simulation Control>, Do Zone Sizing, Do System Sizing, Do Plant Sizing, Do Design Days, Do Weather Simulation, Do HVAC Sizing Simulation
+ Simulation Control, Yes, Yes, Yes, No, Yes, No
+! <Performance Precision Tradeoffs>, Use Coil Direct Simulation, Zone Radiant Exchange Algorithm, Override Mode, Number of Timestep In Hour, Force Euler Method, Minimum Number of Warmup Days, Force Suppress All Begin Environment Resets, MaxZoneTempDiff
+ Performance Precision Tradeoffs, No, ScriptF, Normal, 60, No, 1, No, 0.300
+! <Output Reporting Tolerances>, Tolerance for Time Heating Setpoint Not Met, Tolerance for Zone Cooling Setpoint Not Met Time
+ Output Reporting Tolerances, 0.200, 0.200, 
+! <Site:GroundTemperature:BuildingSurface>,Jan{C},Feb{C},Mar{C},Apr{C},May{C},Jun{C},Jul{C},Aug{C},Sep{C},Oct{C},Nov{C},Dec{C}
+ Site:GroundTemperature:BuildingSurface,  18.00,  18.00,  18.00,  18.00,  18.00,  18.00,  18.00,  18.00,  18.00,  18.00,  18.00,  18.00
+! <Site:GroundTemperature:FCfactorMethod>,Jan{C},Feb{C},Mar{C},Apr{C},May{C},Jun{C},Jul{C},Aug{C},Sep{C},Oct{C},Nov{C},Dec{C}
+ Site:GroundTemperature:FCfactorMethod,  16.00,  11.90,   7.70,   4.00,   7.90,  13.80,  17.20,  20.80,  24.80,  26.10,  26.50,  22.50
+! <Site:GroundTemperature:Shallow>,Jan{C},Feb{C},Mar{C},Apr{C},May{C},Jun{C},Jul{C},Aug{C},Sep{C},Oct{C},Nov{C},Dec{C}
+ Site:GroundTemperature:Shallow,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00
+! <Site:GroundTemperature:Deep>,Jan{C},Feb{C},Mar{C},Apr{C},May{C},Jun{C},Jul{C},Aug{C},Sep{C},Oct{C},Nov{C},Dec{C}
+ Site:GroundTemperature:Deep,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00
+! <Site:GroundReflectance>,Jan{dimensionless},Feb{dimensionless},Mar{dimensionless},Apr{dimensionless},May{dimensionless},Jun{dimensionless},Jul{dimensionless},Aug{dimensionless},Sep{dimensionless},Oct{dimensionless},Nov{dimensionless},Dec{dimensionless}
+ Site:GroundReflectance,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20
+! <Site:GroundReflectance:SnowModifier>, Normal, Daylighting {dimensionless}
+ Site:GroundReflectance:SnowModifier,   1.000,   1.000
+! <Site:GroundReflectance:Snow>,Jan{dimensionless},Feb{dimensionless},Mar{dimensionless},Apr{dimensionless},May{dimensionless},Jun{dimensionless},Jul{dimensionless},Aug{dimensionless},Sep{dimensionless},Oct{dimensionless},Nov{dimensionless},Dec{dimensionless}
+ Site:GroundReflectance:Snow,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20
+! <Site:GroundReflectance:Snow:Daylighting>,Jan{dimensionless},Feb{dimensionless},Mar{dimensionless},Apr{dimensionless},May{dimensionless},Jun{dimensionless},Jul{dimensionless},Aug{dimensionless},Sep{dimensionless},Oct{dimensionless},Nov{dimensionless},Dec{dimensionless}
+ Site:GroundReflectance:Snow:Daylighting,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20
+! <Environment:Weather Station>,Wind Sensor Height Above Ground {m},Wind Speed Profile Exponent {},Wind Speed Profile Boundary Layer Thickness {m},Air Temperature Sensor Height Above Ground {m},Wind Speed Modifier Coefficient-Internal,Temperature Modifier Coefficient-Internal
+Environment:Weather Station,10.000,0.140,270.000,1.500,1.586,9.750E-003
+! <Site:Location>, Location Name, Latitude {N+/S- Deg}, Longitude {E+/W- Deg},  Time Zone Number {GMT+/-}, Elevation {m},  Standard Pressure at Elevation {Pa}, Standard RhoAir at Elevation
+Site:Location,Atlanta-Hartsfield Jackson Intl AP GA USA TMY3 WMO#=722190,33.63,-84.43,-5.00,308.00,97679,1.1610
+! <Site Water Mains Temperature Information>,Calculation Method{},Water Mains Temperature Schedule Name{},Annual Average Outdoor Air Temperature{C},Maximum Difference In Monthly Average Outdoor Air Temperatures{deltaC},Fixed Default Water Mains Temperature{C}
+Site Water Mains Temperature Information,Correlation,NA,16.60,22.50,NA
+! <Building Information>, Building Name,North Axis {deg},Terrain,  Loads Convergence Tolerance Value,Temperature Convergence Tolerance Value,  Solar Distribution,Maximum Number of Warmup Days,Minimum Number of Warmup Days
+ Building Information,OfficeSmall,0.000,City,4.00000E-002,0.20000,FullInteriorAndExterior,25,6
+! <Inside Convection Algorithm>, Algorithm {Simple | TARP | CeilingDiffuser | AdaptiveConvectionAlgorithm}
+Inside Convection Algorithm,TARP
+! <Outside Convection Algorithm>, Algorithm {SimpleCombined | TARP | MoWitt | DOE-2 | AdaptiveConvectionAlgorithm}
+Outside Convection Algorithm,TARP
+! <Sky Radiance Distribution>, Value {Anisotropic}
+Sky Radiance Distribution,Anisotropic
+! <Zone Air Solution Algorithm>, Value {ThirdOrderBackwardDifference | AnalyticalSolution | EulerMethod}
+ Zone Air Solution Algorithm, ThirdOrderBackwardDifference
+! <Zone Air Carbon Dioxide Balance Simulation>, Simulation {Yes/No}, Carbon Dioxide Concentration
+ Zone Air Carbon Dioxide Balance Simulation, No,N/A
+! <Zone Air Generic Contaminant Balance Simulation>, Simulation {Yes/No}, Generic Contaminant Concentration
+ Zone Air Generic Contaminant Balance Simulation, No,N/A
+! <Zone Air Mass Flow Balance Simulation>, Enforce Mass Balance, Adjust Zone Mixing, Adjust Zone Infiltration {AddInfiltration | AdjustInfiltration | None}, Infiltration Zones {MixingSourceZonesOnly | AllZones}
+ Zone Air Mass Flow Balance Simulation, No,N/A,N/A,N/A
+! <HVACSystemRootFindingAlgorithm>, Value {RegulaFalsi | Bisection | BisectionThenRegulaFalsi | RegulaFalsiThenBisection}
+ HVACSystemRootFindingAlgorithm, RegulaFalsi
+! <Environment:Site Atmospheric Variation>,Wind Speed Profile Exponent {},Wind Speed Profile Boundary Layer Thickness {m},Air Temperature Gradient Coefficient {K/m}
+Environment:Site Atmospheric Variation,0.330,460.000,6.500000E-003
+! <Surface Geometry>,Starting Corner,Vertex Input Direction,Coordinate System,Daylight Reference Point Coordinate System,Rectangular (Simple) Surface Coordinate System
+ Surface Geometry,UpperLeftCorner,Counterclockwise,RelativeCoordinateSystem,RelativeCoordinateSystem,RelativeToZoneOrigin
+! <Surface Heat Transfer Algorithm>, Value {CTF - ConductionTransferFunction | EMPD - MoisturePenetrationDepthConductionTransferFunction | CondFD - ConductionFiniteDifference | HAMT - CombinedHeatAndMoistureFiniteElement} - Description,Inside Surface Max Temperature Limit{C}, Surface Convection Coefficient Lower Limit {W/m2-K}, Surface Convection Coefficient Upper Limit {W/m2-K}
+Surface Heat Transfer Algorithm, CTF - ConductionTransferFunction,200,0.10,1000.0
+! <Shading Summary>, Number of Fixed Detached Shades, Number of Building Detached Shades, Number of Attached Shades
+ Shading Summary,0,0,0
+! <Zone Summary>, Number of Zones, Number of Zone Surfaces, Number of SubSurfaces
+ Zone Summary,6,70,22
+! <Zone Information>,Zone Name,North Axis {deg},Origin X-Coordinate {m},Origin Y-Coordinate {m},Origin Z-Coordinate {m},Centroid X-Coordinate {m},Centroid Y-Coordinate {m},Centroid Z-Coordinate {m},Type,Zone Multiplier,Zone List Multiplier,Minimum X {m},Maximum X {m},Minimum Y {m},Maximum Y {m},Minimum Z {m},Maximum Z {m},Ceiling Height {m},Volume {m3},Zone Inside Convection Algorithm {Simple-Detailed-CeilingDiffuser-TrombeWall},Zone Outside Convection Algorithm {Simple-Detailed-Tarp-MoWitt-DOE-2-BLAST}, Floor Area {m2},Exterior Gross Wall Area {m2},Exterior Net Wall Area {m2},Exterior Window Area {m2}, Number of Surfaces, Number of SubSurfaces, Number of Shading SubSurfaces,  Part of Total Building Area
+ Zone Information, CORE_ZN,0.0,0.00,0.00,0.00,13.85,9.23,1.53,1,1,1,5.00,22.69,5.00,13.46,0.00,3.05,3.05,456.46,TARP,TARP,149.66,0.00,0.00,0.00,6,0,0,Yes
+ Zone Information, PERIMETER_ZN_1,0.0,0.00,0.00,0.00,13.85,2.21,1.53,1,1,1,0.00,27.69,0.00,5.00,0.00,3.05,3.05,346.02,TARP,TARP,113.45,84.45,67.72,16.73,6,6,0,Yes
+ Zone Information, PERIMETER_ZN_2,0.0,0.00,0.00,0.00,25.64,9.23,1.53,1,1,1,22.69,27.69,0.00,18.46,0.00,3.05,3.05,205.27,TARP,TARP,67.30,56.30,45.15,11.16,6,4,0,Yes
+ Zone Information, PERIMETER_ZN_3,0.0,0.00,0.00,0.00,13.85,16.25,1.53,1,1,1,0.00,27.69,13.46,18.46,0.00,3.05,3.05,346.02,TARP,TARP,113.45,84.45,63.82,16.73,6,8,0,Yes
+ Zone Information, PERIMETER_ZN_4,0.0,0.00,0.00,0.00,2.05,9.23,1.53,1,1,1,0.00,5.00,0.00,18.46,0.00,3.05,3.05,205.27,TARP,TARP,67.30,56.30,45.15,11.16,6,4,0,Yes
+ Zone Information, ATTIC,0.0,0.00,0.00,0.00,13.85,9.23,3.70,1,1,1,-0.60,28.29,-0.60,19.06,3.05,6.33,1.64,720.19,TARP,TARP,567.98,0.00,0.00,0.00,13,0,0,No
+! <Zone Internal Gains Nominal>,Zone Name, Floor Area {m2},# Occupants,Area per Occupant {m2/person},Occupant per Area {person/m2},Interior Lighting {W/m2},Electric Load {W/m2},Gas Load {W/m2},Other Load {W/m2},Hot Water Eq {W/m2},Steam Equipment {W/m2},Sum Loads per Area {W/m2},Outdoor Controlled Baseboard Heat
+ Zone Internal Gains Nominal, CORE_ZN,149.66,9.0,16.588,6.028E-002,10.764,6.780,0.000,0.000,0.000,0.000,17.544,No
+ Zone Internal Gains Nominal, PERIMETER_ZN_1,113.45,11.3,10.059,9.942E-002,10.764,127.571,0.000,0.000,0.000,0.000,138.335,No
+ Zone Internal Gains Nominal, PERIMETER_ZN_2,67.30,4.1,16.588,6.028E-002,10.764,6.780,0.000,0.000,0.000,0.000,17.544,No
+ Zone Internal Gains Nominal, PERIMETER_ZN_3,113.45,6.8,16.588,6.028E-002,10.764,6.780,0.000,0.000,0.000,0.000,17.544,No
+ Zone Internal Gains Nominal, PERIMETER_ZN_4,67.30,4.1,16.588,6.028E-002,10.764,6.780,0.000,0.000,0.000,0.000,17.544,No
+ Zone Internal Gains Nominal, ATTIC,567.98,0.0,N/A,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,No
+! <People Internal Gains Nominal>,Name,Schedule Name,Zone Name,Zone Floor Area {m2},# Zone Occupants,Number of People {},People/Floor Area {person/m2},Floor Area per person {m2/person},Fraction Radiant,Fraction Convected,Sensible Fraction Calculation,Activity level,ASHRAE 55 Warnings,Carbon Dioxide Generation Rate,Nominal Minimum Number of People,Nominal Maximum Number of People
+ People Internal Gains Nominal, CORE_ZN,BLDG_OCC_SCH_WO_SB,CORE_ZN,149.66,9.0,9.0,6.028E-002,16.588,0.300,0.700,AutoCalculate,ACTIVITY_SCH,No,3.8200E-008,0,9
+ People Internal Gains Nominal, PERIMETER_ZN_1,BLDG_OCC_SCH_WO_SB,PERIMETER_ZN_1,113.45,11.3,11.3,9.942E-002,10.059,0.300,0.700,AutoCalculate,ACTIVITY_SCH,No,3.8200E-008,0,11
+ People Internal Gains Nominal, PERIMETER_ZN_2,BLDG_OCC_SCH_W_SB,PERIMETER_ZN_2,67.30,4.1,4.1,6.028E-002,16.588,0.300,0.700,AutoCalculate,ACTIVITY_SCH,No,3.8200E-008,0,4
+ People Internal Gains Nominal, PERIMETER_ZN_3,BLDG_OCC_SCH_WO_SB,PERIMETER_ZN_3,113.45,6.8,6.8,6.028E-002,16.588,0.300,0.700,AutoCalculate,ACTIVITY_SCH,No,3.8200E-008,0,7
+ People Internal Gains Nominal, PERIMETER_ZN_4,BLDG_OCC_SCH_WO_SB,PERIMETER_ZN_4,67.30,4.1,4.1,6.028E-002,16.588,0.300,0.700,AutoCalculate,ACTIVITY_SCH,No,3.8200E-008,0,4
+! <Lights Internal Gains Nominal>,Name,Schedule Name,Zone Name,Zone Floor Area {m2},# Zone Occupants,Lighting Level {W},Lights/Floor Area {W/m2},Lights per person {W/person},Fraction Return Air,Fraction Radiant,Fraction Short Wave,Fraction Convected,Fraction Replaceable,End-Use Category,Nominal Minimum Lighting Level {W},Nominal Maximum Lighting Level {W}
+ Lights Internal Gains Nominal, CORE_ZN_LIGHTS,BLDG_LIGHT_SCH,CORE_ZN,149.66,9.0,1610.899,10.764,178.553,0.000,0.700,0.200,0.100,1.000,LightsWired,0.000,1610.899
+ Lights Internal Gains Nominal, PERIMETER_ZN_1_LIGHTS,BLDG_LIGHT_SCH,PERIMETER_ZN_1,113.45,11.3,1221.166,10.764,108.271,0.000,0.700,0.200,0.100,1.000,LightsWired,0.000,1221.166
+ Lights Internal Gains Nominal, PERIMETER_ZN_2_LIGHTS,BLDG_LIGHT_SCH,PERIMETER_ZN_2,67.30,4.1,724.411,10.764,178.553,0.000,0.700,0.200,0.100,1.000,LightsWired,0.000,724.411
+ Lights Internal Gains Nominal, PERIMETER_ZN_3_LIGHTS,BLDG_LIGHT_SCH,PERIMETER_ZN_3,113.45,6.8,1221.166,10.764,178.553,0.000,0.700,0.200,0.100,1.000,LightsWired,0.000,1221.166
+ Lights Internal Gains Nominal, PERIMETER_ZN_4_LIGHTS,BLDG_LIGHT_SCH,PERIMETER_ZN_4,67.30,4.1,724.411,10.764,178.553,0.000,0.700,0.200,0.100,1.000,LightsWired,0.000,724.411
+! <ElectricEquipment Internal Gains Nominal>,Name,Schedule Name,Zone Name,Zone Floor Area {m2},# Zone Occupants,Equipment Level {W},Equipment/Floor Area {W/m2},Equipment per person {W/person},Fraction Latent,Fraction Radiant,Fraction Lost,Fraction Convected,End-Use SubCategory,Nominal Minimum Equipment Level {W},Nominal Maximum Equipment Level {W}
+ ElectricEquipment Internal Gains Nominal, CORE_ZN_MISCPLUG_EQUIP,BLDG_EQUIP_SCH,CORE_ZN,149.66,9.0,1014.677,6.780,112.467,0.000,0.000,0.000,1.000,MiscPlug,0.000,1014.677
+ ElectricEquipment Internal Gains Nominal, PERIMETER_ZN_1_MISCPLUG_EQUIP,BLDG_EQUIP_SCH,PERIMETER_ZN_1,113.45,11.3,769.191,6.780,68.198,0.000,0.000,0.000,1.000,MiscPlug,0.000,769.191
+ ElectricEquipment Internal Gains Nominal, PERIMETER_ZN_2_MISCPLUG_EQUIP,BLDG_EQUIP_SCH,PERIMETER_ZN_2,67.30,4.1,456.294,6.780,112.467,0.000,0.000,0.000,1.000,MiscPlug,0.000,456.294
+ ElectricEquipment Internal Gains Nominal, PERIMETER_ZN_3_MISCPLUG_EQUIP,BLDG_EQUIP_SCH,PERIMETER_ZN_3,113.45,6.8,769.191,6.780,112.467,0.000,0.000,0.000,1.000,MiscPlug,0.000,769.191
+ ElectricEquipment Internal Gains Nominal, PERIMETER_ZN_4_MISCPLUG_EQUIP,BLDG_EQUIP_SCH,PERIMETER_ZN_4,67.30,4.1,456.294,6.780,112.467,0.000,0.000,0.000,1.000,MiscPlug,0.000,456.294
+ ElectricEquipment Internal Gains Nominal, PERIMETER_ZN_1_PHEAT,FMU_PERIMETER_ZN_1_PH,PERIMETER_ZN_1,113.45,11.3,13534.552,119.300,1200.000,0.000,1.000,0.000,0.000,Personal Heater,0.000,0.000
+ ElectricEquipment Internal Gains Nominal, PERIMETER_ZN_1_PFAN,FMU_PERIMETER_ZN_1_PF,PERIMETER_ZN_1,113.45,11.3,169.182,1.491,15.000,0.000,0.000,1.000,0.000,Personal Fan,0.000,0.000
+! <Shadowing/Sun Position Calculations Annual Simulations>, Shading Calculation Method, Shading Calculation Update Frequency Method, Shading Calculation Update Frequency {days}, Maximum Figures in Shadow Overlap Calculations {}, Polygon Clipping Algorithm, Pixel Counting Resolution, Sky Diffuse Modeling Algorithm, Output External Shading Calculation Results, Disable Self-Shading Within Shading Zone Groups, Disable Self-Shading From Shading Zone Groups to Other Zones
+Shadowing/Sun Position Calculations Annual Simulations,PolygonClipping,Periodic,30,15000,SutherlandHodgman,512,SimpleSkyDiffuseModeling,No,No,No
+! <ZoneInfiltration Airflow Stats Nominal>,Name,Schedule Name,Zone Name, Zone Floor Area {m2}, # Zone Occupants,Design Volume Flow Rate {m3/s},Volume Flow Rate/Floor Area {m3/s-m2},Volume Flow Rate/Exterior Surface Area {m3/s-m2},ACH - Air Changes per Hour,Equation A - Constant Term Coefficient {},Equation B - Temperature Term Coefficient {1/C},Equation C - Velocity Term Coefficient {s/m}, Equation D - Velocity Squared Term Coefficient {s2/m2}
+ ZoneInfiltration Airflow Stats Nominal, PERIMETER_ZN_1_INFILTRATION,INFIL_QUARTER_ON_SCH,PERIMETER_ZN_1,113.45,11.3,8.649E-002,7.624E-004,1.024E-003,0.900,0.000,0.000,0.224,0.000
+ ZoneInfiltration Airflow Stats Nominal, PERIMETER_ZN_2_INFILTRATION,INFIL_QUARTER_ON_SCH,PERIMETER_ZN_2,67.30,4.1,5.766E-002,8.568E-004,1.024E-003,1.011,0.000,0.000,0.224,0.000
+ ZoneInfiltration Airflow Stats Nominal, PERIMETER_ZN_3_INFILTRATION,INFIL_QUARTER_ON_SCH,PERIMETER_ZN_3,113.45,6.8,8.649E-002,7.624E-004,9.789E-004,0.900,0.000,0.000,0.224,0.000
+ ZoneInfiltration Airflow Stats Nominal, PERIMETER_ZN_4_INFILTRATION,INFIL_QUARTER_ON_SCH,PERIMETER_ZN_4,67.30,4.1,5.766E-002,8.568E-004,1.024E-003,1.011,0.000,0.000,0.224,0.000
+ ZoneInfiltration Airflow Stats Nominal, ATTIC_INFILTRATION,ALWAYS_ON,ATTIC,567.98,0.0,0.200,3.523E-004,3.052E-004,1.000,1.000,0.000,0.000,0.000
+! <AirFlow Model>, Simple
+ AirFlow Model, Simple
+! <RoomAir Model>, Zone Name, Mixing/Mundt/UCSDDV/UCSDCV/UCSDUFI/UCSDUFE/User Defined
+RoomAir Model,CORE_ZN,Mixing/Well-Stirred
+RoomAir Model,PERIMETER_ZN_1,Mixing/Well-Stirred
+RoomAir Model,PERIMETER_ZN_2,Mixing/Well-Stirred
+RoomAir Model,PERIMETER_ZN_3,Mixing/Well-Stirred
+RoomAir Model,PERIMETER_ZN_4,Mixing/Well-Stirred
+RoomAir Model,ATTIC,Mixing/Well-Stirred
+! <AirflowNetwork Model:Control>, No Multizone or Distribution/Multizone with Distribution/Multizone without Distribution/Multizone with Distribution only during Fan Operation
+AirflowNetwork Model:Control,NoMultizoneOrDistribution
+! <Zone Volume Capacitance Multiplier>, Sensible Heat Capacity Multiplier, Moisture Capacity Multiplier, Carbon Dioxide Capacity Multiplier, Generic Contaminant Capacity Multiplier
+Zone Volume Capacitance Multiplier,   2.167 ,   1.000,   1.000,   1.000
+! <Load Timesteps in Zone Design Calculation Averaging Window>, Value
+ Load Timesteps in Zone Design Calculation Averaging Window,    6
+! <Heating Sizing Factor Information>, Sizing Factor ID, Value
+ Heating Sizing Factor Information, Global,   1.2000    
+ Heating Sizing Factor Information, Zone CORE_ZN,   1.2000    
+ Heating Sizing Factor Information, Zone PERIMETER_ZN_1,   1.2000    
+ Heating Sizing Factor Information, Zone PERIMETER_ZN_2,   1.2000    
+ Heating Sizing Factor Information, Zone PERIMETER_ZN_3,   1.2000    
+ Heating Sizing Factor Information, Zone PERIMETER_ZN_4,   1.2000    
+! <Cooling Sizing Factor Information>, Sizing Factor ID, Value
+ Cooling Sizing Factor Information, Global,   1.2000    
+ Cooling Sizing Factor Information, Zone CORE_ZN,   1.2000    
+ Cooling Sizing Factor Information, Zone PERIMETER_ZN_1,   1.2000    
+ Cooling Sizing Factor Information, Zone PERIMETER_ZN_2,   1.2000    
+ Cooling Sizing Factor Information, Zone PERIMETER_ZN_3,   1.2000    
+ Cooling Sizing Factor Information, Zone PERIMETER_ZN_4,   1.2000    
+! <Zone Sizing Information>, Zone Name, Load Type, Calc Des Load {W}, User Des Load {W}, Calc Des Air Flow Rate {m3/s}, User Des Air Flow Rate {m3/s}, Design Day Name, Date/Time of Peak, Temperature at Peak {C}, Humidity Ratio at Peak {kgWater/kgDryAir}, Floor Area {m2}, # Occupants, Calc Outdoor Air Flow Rate {m3/s}, Calc DOAS Heat Addition Rate {W}
+ Zone Sizing Information, CORE_ZN, Cooling, 4023.32450, 4827.98940, 0.26610, 0.31932, ATLANTA-HARTSFIELD.JACKSON.INTL.AP_GA_USA ANN CLG .4% CONDNS DB=>MWB, 7/21 15:59:00, 33.83950, 1.44722E-002, 149.65740, 9.02199, 7.60212E-002, 0.00000
+ Zone Sizing Information, CORE_ZN, Heating, 1133.95301, 1360.74361, 4.78921E-002, 7.60212E-002, ATLANTA-HARTSFIELD.JACKSON.INTL.AP_GA_USA ANN HTG 99.6% CONDNS DB, 1/21 24:00:00, -6.30000, 2.29779E-003, 149.65740, 9.02199, 7.60212E-002, 0.00000
+ Zone Sizing Information, PERIMETER_ZN_1, Cooling, 3481.66048, 4177.99258, 0.21139, 0.25366, ATLANTA-HARTSFIELD.JACKSON.INTL.AP_GA_USA ANN CLG .4% CONDNS DB=>MWB, 7/21 15:25:00, 34.16250, 1.44728E-002, 113.45000, 11.27879, 5.76290E-002, 0.00000
+ Zone Sizing Information, PERIMETER_ZN_1, Heating, 4247.65887, 5097.19064, 0.18884, 0.22661, ATLANTA-HARTSFIELD.JACKSON.INTL.AP_GA_USA ANN HTG 99.6% CONDNS DB, 1/21 24:00:00, -6.30000, 2.29779E-003, 113.45000, 11.27879, 5.76290E-002, 0.00000
+ Zone Sizing Information, PERIMETER_ZN_2, Cooling, 2955.15704, 3546.18845, 0.19545, 0.23454, ATLANTA-HARTSFIELD.JACKSON.INTL.AP_GA_USA ANN CLG .4% CONDNS DB=>MWB, 7/21 09:57:00, 30.70925, 1.44665E-002, 67.30000, 4.05713, 3.41862E-002, 0.00000
+ Zone Sizing Information, PERIMETER_ZN_2, Heating, 2522.31316, 3026.77579, 0.10653, 0.12783, ATLANTA-HARTSFIELD.JACKSON.INTL.AP_GA_USA ANN HTG 99.6% CONDNS DB, 1/21 24:00:00, -6.30000, 2.29779E-003, 67.30000, 4.05713, 3.41862E-002, 0.00000
+ Zone Sizing Information, PERIMETER_ZN_3, Cooling, 3727.70501, 4473.24601, 0.24655, 0.29586, ATLANTA-HARTSFIELD.JACKSON.INTL.AP_GA_USA ANN CLG .4% CONDNS DB=>MWB, 7/21 15:23:00, 34.18150, 1.44729E-002, 113.45000, 6.83925, 5.76290E-002, 0.00000
+ Zone Sizing Information, PERIMETER_ZN_3, Heating, 4096.42838, 4915.71406, 0.17301, 0.20761, ATLANTA-HARTSFIELD.JACKSON.INTL.AP_GA_USA ANN HTG 99.6% CONDNS DB, 1/21 24:00:00, -6.30000, 2.29779E-003, 113.45000, 6.83925, 5.76290E-002, 0.00000
+ Zone Sizing Information, PERIMETER_ZN_4, Cooling, 3419.67855, 4103.61426, 0.22618, 0.27141, ATLANTA-HARTSFIELD.JACKSON.INTL.AP_GA_USA ANN CLG .4% CONDNS DB=>MWB, 7/21 17:14:00, 32.84833, 1.44704E-002, 67.30000, 4.05713, 3.41862E-002, 0.00000
+ Zone Sizing Information, PERIMETER_ZN_4, Heating, 2571.01197, 3085.21436, 0.10858, 0.13030, ATLANTA-HARTSFIELD.JACKSON.INTL.AP_GA_USA ANN HTG 99.6% CONDNS DB, 1/21 24:00:00, -6.30000, 2.29779E-003, 67.30000, 4.05713, 3.41862E-002, 0.00000
+! <Component Sizing Information>, Component Type, Component Name, Input Field Description, Value
+ Component Sizing Information, ZoneHVAC:IdealLoadsAirSystem, CORE_ZN IDEAL LOADS AIR SYSTEM, User-Specified Maximum Heating Air Flow Rate [m3/s], 0.00000
+ Component Sizing Information, ZoneHVAC:IdealLoadsAirSystem, CORE_ZN IDEAL LOADS AIR SYSTEM, User-Specified Maximum Cooling Air Flow Rate [m3/s], 0.00000
+ Component Sizing Information, ZoneHVAC:IdealLoadsAirSystem, PERIMETER_ZN_1 AIR, User-Specified Maximum Heating Air Flow Rate [m3/s], 0.00000
+ Component Sizing Information, ZoneHVAC:IdealLoadsAirSystem, PERIMETER_ZN_1 AIR, User-Specified Maximum Cooling Air Flow Rate [m3/s], 0.00000
+ Component Sizing Information, ZoneHVAC:IdealLoadsAirSystem, PERIMETER_ZN_2 IDEAL LOADS AIR SYSTEM, User-Specified Maximum Heating Air Flow Rate [m3/s], 0.00000
+ Component Sizing Information, ZoneHVAC:IdealLoadsAirSystem, PERIMETER_ZN_2 IDEAL LOADS AIR SYSTEM, User-Specified Maximum Cooling Air Flow Rate [m3/s], 0.00000
+ Component Sizing Information, ZoneHVAC:IdealLoadsAirSystem, PERIMETER_ZN_3 IDEAL LOADS AIR SYSTEM, User-Specified Maximum Heating Air Flow Rate [m3/s], 0.00000
+ Component Sizing Information, ZoneHVAC:IdealLoadsAirSystem, PERIMETER_ZN_3 IDEAL LOADS AIR SYSTEM, User-Specified Maximum Cooling Air Flow Rate [m3/s], 0.00000
+ Component Sizing Information, ZoneHVAC:IdealLoadsAirSystem, PERIMETER_ZN_4 IDEAL LOADS AIR SYSTEM, User-Specified Maximum Heating Air Flow Rate [m3/s], 0.00000
+ Component Sizing Information, ZoneHVAC:IdealLoadsAirSystem, PERIMETER_ZN_4 IDEAL LOADS AIR SYSTEM, User-Specified Maximum Cooling Air Flow Rate [m3/s], 0.00000
+! <Environment>,Environment Name,Environment Type, Start Date, End Date, Start DayOfWeek, Duration {#days}, Source:Start DayOfWeek,  Use Daylight Saving, Use Holidays, Apply Weekend Holiday Rule,  Use Rain Values, Use Snow Values, Sky Temperature Model
+! <Environment:Special Days>, Special Day Name, Special Day Type, Source, Start Date, Duration {#days}
+! <Environment:Daylight Saving>, Daylight Saving Indicator, Source, Start Date, End Date
+! <Environment:WarmupDays>, NumberofWarmupDays
+Environment,RUNPERIOD 1,WeatherFileRunPeriod,08/25/2015,08/26/2015,Tuesday,2,Use RunPeriod Specified Day,No,No,No,Yes,Yes,Clark and Allen
+Environment:Daylight Saving,Yes,InputFile,03/08,11/01
+Environment:Special Days,NEW YEARS DAY,Holiday,InputFile,01/01,  1Environment:Special Days,VETERANS DAY,Holiday,InputFile,11/11,  1Environment:Special Days,CHRISTMAS,Holiday,InputFile,12/25,  1Environment:Special Days,INDEPENDENCE DAY,Holiday,InputFile,07/04,  1Environment:Special Days,MLK DAY,Holiday,InputFile,01/19,  1Environment:Special Days,PRESIDENTS DAY,Holiday,InputFile,02/16,  1Environment:Special Days,MEMORIAL DAY,Holiday,InputFile,05/25,  1Environment:Special Days,LABOR DAY,Holiday,InputFile,09/07,  1Environment:Special Days,COLUMBUS DAY,Holiday,InputFile,10/12,  1Environment:Special Days,THANKSGIVING,Holiday,InputFile,11/26,  1Environment:WarmupDays,  7
+! <Warmup Convergence Information>,Zone Name,Environment Type/Name,Average Warmup Temperature Difference {deltaC},Std Dev Warmup Temperature Difference {deltaC},Max Temperature Pass/Fail Convergence,Min Temperature Pass/Fail Convergence,Average Warmup Load Difference {W},Std Dev Warmup Load Difference {W},Heating Load Pass/Fail Convergence,Cooling Load Pass/Fail Convergence
+ Warmup Convergence Information,CORE_ZN,RunPeriod: RUNPERIOD 1,3.3133989379E-015,2.8218459073E-015,Pass,Pass,1.8477035103E-003,1.4977656000E-002,Pass,Pass
+ Warmup Convergence Information,PERIMETER_ZN_1,RunPeriod: RUNPERIOD 1,5.6967082424E-003,2.7713624134E-003,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,PERIMETER_ZN_2,RunPeriod: RUNPERIOD 1,2.4548264656E-015,2.3451996421E-015,Pass,Pass,4.1952267972E-003,1.8692409260E-002,Pass,Pass
+ Warmup Convergence Information,PERIMETER_ZN_3,RunPeriod: RUNPERIOD 1,3.1234274426E-015,2.6825259275E-015,Pass,Pass,4.5729429284E-003,2.4355988870E-002,Pass,Pass
+ Warmup Convergence Information,PERIMETER_ZN_4,RunPeriod: RUNPERIOD 1,2.4745637638E-015,2.3617728383E-015,Pass,Pass,3.8831043609E-003,1.7754744830E-002,Pass,Pass
+ Warmup Convergence Information,ATTIC,RunPeriod: RUNPERIOD 1,5.5787812270E-002,5.0123703186E-002,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+! <Program Control Information:Threads/Parallel Sims>, Threading Supported,Maximum Number of Threads, Env Set Threads (OMP_NUM_THREADS), EP Env Set Threads (EP_OMP_NUM_THREADS), IDF Set Threads, Number of Threads Used (Interior Radiant Exchange), Number Nominal Surfaces, Number Parallel Sims
+Program Control:Threads/Parallel Sims, No,1, N/A, N/A, N/A, N/A, N/A, N/A
+End of Data

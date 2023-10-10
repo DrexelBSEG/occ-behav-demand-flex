@@ -1,0 +1,13 @@
+ ReadVarsESO
+ processing:.\ASHRAE901_OfficeSmall_STD2004_Atlanta.rvi
+ input file:ASHRAE901_OfficeSmall_STD2004_Atlanta.eso
+ output file:ASHRAE901_OfficeSmall_STD2004_Atlanta.csv
+ getting all vars from:ASHRAE901_OfficeSmall_STD2004_Atlanta.eso
+  number variables requested for output=          33
+ ReadVars Run Time=00hr 00min  0.22sec
+ ReadVarsESO program completed successfully.
+ ReadVarsESO
+ processing:.\ASHRAE901_OfficeSmall_STD2004_Atlanta.mvi
+ Requested ESO file=ASHRAE901_OfficeSmall_STD2004_Atlanta.mtr
+ does not exist.  ReadVarsESO program terminated.
+ ReadVarsESO program terminated.

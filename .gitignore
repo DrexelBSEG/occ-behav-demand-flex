@@ -1,0 +1,14 @@
+# simulink ouputs
+testbed/*slprj
+
+# all data
+*.mat
+
+# except DB location file
+!testbed/DBLoc.mat
+
+# energyplus output folder
+testbed/Output_EPExport_*
+
+# random folder
+testbed/dig/

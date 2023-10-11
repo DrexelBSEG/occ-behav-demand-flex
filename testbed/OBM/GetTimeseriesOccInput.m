@@ -1,5 +1,5 @@
 clc,clear
-load('Atlanta_Eff_TypSum_RB_2004_TypOcc_TypBehav_NoTES_02112022_033608.mat');
+load('Atlanta_Eff_TypSum_RB_2004_DenOcc_TypBehav_NoTES_10102023_235735.mat');
 %%
 OccNum=4;
 for i=1:1441

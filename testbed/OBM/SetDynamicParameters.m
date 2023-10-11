@@ -127,13 +127,14 @@ SharedMat = OccupantMatrix([0,0]&[0,0]);
 %% Seed random number generator
 rng(randomseed,'twister');
 %% load Airflow ANN model
-persistent MRT_Airflow T_Airflow V_Airflow ANN_Load_indicator TestSeason DaylightSaving
+persistent MRT_Airflow T_Airflow V_Airflow ANN_Load_indicator TestSeason DaylightSaving EnableAirFlow
 if isempty(ANN_Load_indicator)
     MRT_Airflow=load('MRT_v2_2.mat');
     T_Airflow=load('T_v2_2.mat');
     V_Airflow=load('V_v2_2.mat');
     ANN_Load_indicator=1;
     TestSeason=xlsread('settings.csv', 1,'B2');
+    EnableAirFlow=xlsread('settings.csv', 1,'N2');
     if TestSeason==1
         DaylightSaving=0;
     else
@@ -376,12 +377,21 @@ for n = 1:size(OccupantMatrix,2)
         ANN_input=[bcvtbveczone(5),bcvtbveczone(4),bcvtbveczone(9),...
             (bcvtbveczone(8)+bcvtbveczone(10)+bcvtbveczone(11)+bcvtbveczone(6)+bcvtbveczone(7))/5,bcvtbveczone(13),...
             ENumInOcc,OccupantMatrix(n).OccPosition(1),OccupantMatrix(n).OccPosition(2)];
-        % occupant's coordinate temperature
-        OccupantMatrix(n).IndoorEnvironmentVectorBase(1)=predict(T_Airflow.net,ANN_input);
-        % occupant's coordinate mean radiant temperature
-        OccupantMatrix(n).IndoorEnvironmentVectorBase(4)=predict(MRT_Airflow.net,ANN_input);
-        % occupant's coordinate air velocity
-        OccupantMatrix(n).IndoorEnvironmentVectorBase(3)=predict(V_Airflow.net,ANN_input);
+        if EnableAirFlow==1
+            % occupant's coordinate temperature
+            OccupantMatrix(n).IndoorEnvironmentVectorBase(1)=predict(T_Airflow.net,ANN_input);
+            % occupant's coordinate mean radiant temperature
+            OccupantMatrix(n).IndoorEnvironmentVectorBase(4)=predict(MRT_Airflow.net,ANN_input);
+            % occupant's coordinate air velocity
+            OccupantMatrix(n).IndoorEnvironmentVectorBase(3)=predict(V_Airflow.net,ANN_input);
+        else
+            % occupant's coordinate temperature
+            OccupantMatrix(n).IndoorEnvironmentVectorBase(1)=bcvtbveczone(1);
+            % occupant's coordinate mean radiant temperature
+            OccupantMatrix(n).IndoorEnvironmentVectorBase(4)=bcvtbveczone(2);
+            % occupant's coordinate air velocity
+            OccupantMatrix(n).IndoorEnvironmentVectorBase(3)=0.05;
+        end
         % Zone-level relative humidity
         OccupantMatrix(n).IndoorEnvironmentVectorBase(2) = bcvtbveczone(3);
         % Outdoor ambient temperature (for non- 6AM time)

@@ -11,3 +11,4 @@ recv,(0-recovery mode off; 1-recovery mode on)
 ts_recv,(timestep to revoer to if recv==1)
 coll_recv,"(collection name for recovery if recv==1. put ""current"" if the collection name saved in the DBLoc.mat is desired)"
 enable OBM,(0=disable OBM; 1=connect with OBM)
+enable airflow model,(0=disable airflow model; 1=enable airflow model)

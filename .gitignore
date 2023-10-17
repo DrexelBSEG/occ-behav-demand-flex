@@ -3,6 +3,10 @@
 
 # ignore all .mat files in the analysis folder and its subfolders
 analysis/**/*.mat
+testbed/*.mat
+
+# except
+!*/DBLoc.mat
 
 # energyplus output folder
 */Output_EPExport_*

@@ -158,7 +158,7 @@ persistent eplusstdocc eplushtngbase eplusclngbase eplustempoffsets ...
 persistent group_logisticregression_arrive group_logisticregression_inter
 persistent zoneconstraints sharedoptions occupantlist_final_sim
 persistent conn CollName BX BXLabel BXFields start_time recv time_recv
-persistent BehaviorInterval DayofYear enableOBM
+persistent BehaviorInterval DayofYear enableOBM TResetInterval
 %% Extrinsic Function
 coder.extrinsic('xlsread');
 coder.extrinsic('csvread');
@@ -386,6 +386,11 @@ if isempty(init)
     infiltrationrange = 'C143';
     BehaviorInterval = 0;
     BehaviorInterval = (xlsread(filename,2,infiltrationrange));
+    
+    % Thermostat reset interval (ZC 10/20/2023)
+    tresetrange = 'C144';
+    TResetInterval = 0;
+    TResetInterval = (xlsread(filename,2,tresetrange));
     
     % Initialize number of inputs coming from BCVTB
     nbcvtbinputs = 3;
@@ -792,8 +797,8 @@ if any([NumOcc1])~=0
             group_logisticregression_arrive,RuleVector,...
             eplusstdocc,humphact,walkchecktimestep,trm);
         
-        % Every 15 min, renew thermostat setpoint status
-        if rem(clock,60*15)==0
+        % Every `TResetInterval` min, override occpunat decision by supervisroy control signal
+        if rem(clock,60*TResetInterval)==0
             for OccNum_UpdatedTC=1:size(OccupantMatrix{f},2)
                 OccupantMatrix{f}(OccNum_UpdatedTC).BehaviorStatesVector(7)=0;
             end

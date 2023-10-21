@@ -1,2 +1,2 @@
 stepsize,SeasonType,GEB_case,Control_method,occ_dense,occ_energysaving,TES,recv,ts_recv,coll_recv,Location,STD,enable OBM,enable airflow model
-60,4,2,0,1,0,0,0,315,current,1,1,1,1
+60,4,1,0,1,0,0,0,315,current,1,1,1,1

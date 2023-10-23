@@ -3,7 +3,7 @@ clc
 clear all
 
 % add data folder to path
-dataFolder = 'shed_l1_b3';
+dataFolder = 'noDR-AF-T-2hr';
 dataFolderPath = fullfile(pwd,dataFolder);
 addpath(dataFolderPath);
 

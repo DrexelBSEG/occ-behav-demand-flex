@@ -3,7 +3,8 @@ clc
 clear all
 
 % add data folder to path
-dataFolder = 'noDR-AF-T-2hr';
+caseName = 'noDR-AF-H';
+dataFolder = ['raw_data\', caseName];
 dataFolderPath = fullfile(pwd,dataFolder);
 addpath(dataFolderPath);
 
@@ -331,5 +332,5 @@ output_peak_occ = array2table([[kpi.peak.pf_occ(:,1),kpi.peak.ph_occ(:,1),kpi.pe
                          'VariableNames',{'Personal Fan Duration [mins]','Personal Heater Duration [mins]','Cooling Setpoint Up Duration [mins]','Cooling Setpoint Down Duration [mins]','Occupant #'});
 
 % write table to csv
-writetable(output,['post_data\',dataFolder,'.csv']);
-writetable(output_peak_occ,['post_data\',dataFolder,'_peak_occ.csv']);
+writetable(output,['post_data\',caseName,'.csv']);
+writetable(output_peak_occ,['post_data\',caseName,'_peak_occ.csv']);

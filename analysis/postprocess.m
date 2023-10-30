@@ -3,7 +3,7 @@ clc
 clear all
 
 % add data folder to path
-caseName = 'noDR-AF-H';
+caseName = 'Shed-AF-TFH-1hr';
 dataFolder = ['raw_data\', caseName];
 dataFolderPath = fullfile(pwd,dataFolder);
 addpath(dataFolderPath);

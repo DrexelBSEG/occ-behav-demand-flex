@@ -4,35 +4,36 @@ clear all
 settings = readtable('settings.csv');
 switch settings.GEB_case
     case 1
-        disp("GEB scenario: Efficiency (no demand response)");
+        term1 = 'noDR';
     case 2
-        disp("GEB scenario: Shedding");
+        term1 = 'Shed';
 end
 switch settings.enableAirflowModel
     case 0
-        disp("Airflow model: Disable")
+        term2 = 'noAF';
     case 1
-        disp("Airflow model: Active")
+        term2 = 'AF';
 end
 OBM_settings = xlsread('OBM/Master_Setup_AC_dense.xlsx',2,'H96:J96');
 switch OBM_settings(3)
     case 0
-        disp("Thermostat: Not Allowed");
+        term31 = '';
     case 1
-        disp("Thermostat: Allowed");
+        term31 = 'T';
 end
 switch OBM_settings(2)
     case 0
-        disp("Fan: Not Allowed");
+        term32 = '';
     case 2
-        disp("Fan: Allowed");
+        term32 = 'F';
 end
 switch OBM_settings(1)
     case 0
-        disp("Heater: Not Allowed");
+        term33 = '';
     case 2
-        disp("Heater: Allowed");
+        term33 = 'H';
 end
+disp([term1,'-',term2,'-',term31,term32,term33]);
 %% Please provide the simulation time period
 T = 86400; % length of the simulation period 
 ntimestep=T/60; % total number of time step

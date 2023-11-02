@@ -1,0 +1,1 @@
+This case will not be included in the paper, but it shows the impact of setpoint reset frequency.

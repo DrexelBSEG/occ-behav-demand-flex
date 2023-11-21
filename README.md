@@ -24,3 +24,15 @@ This repo is developed for the STBE journal paper **Advanced Co-simulation Frame
 
 **EnergyPlus 9.3**
 - Directory must be added to the path.
+
+### File description
+- **`testbed/callSim.m`** The function for all simulation except HVAC.
+- **`testbed/VirtualHP`** The function for a virtual air source heat pump.
+- **`testbed/DataDL.m`** Download data from MongoDB, EPlus folder, and HardwareData folder, then save them to a `.mat` file. File name is constructed as foldername_MMDDYYYY_HHMMSS.
+- **`testbed/CTRL`** Include control models related scripts. 
+- **`testbed/HardwareData`** Place to store hardware data. This is an optional folder, only for hardware-in-the-loop simulation.
+- **`testbed/OBM`** OBM related scripts.
+- **`testbed/DB`** MongoDB reading/writing related scripts.
+- **`testbed/VB`** Virtual building Simulink model.
+- **`testbed/DBLoc.mat`** It stores the database and collection names for each run. 
+- **`testbed/ExampleCall.m`** Example master script to run the simulation.
